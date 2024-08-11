@@ -3,9 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 class Net(nn.Module):
-    """
-    Reference: https://github.com/anshuls235/freshness-detector/blob/4cd289fb05a14d3c710813fca4d8d03987d656e5/main.py#L24
-    """
+   
     def __init__(self):
         super().__init__()
         self.conv1 = nn.Conv2d(3, 16, kernel_size=3, padding=1)
@@ -20,3 +18,5 @@ class Net(nn.Module):
         out = torch.tanh(self.fc1(out))
         out = self.fc2(out)
         return out
+    
+    
